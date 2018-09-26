@@ -1,0 +1,5 @@
+baseurl: /lfn
+
+markdown: kramdown
+kramdown:
+  input: GFM
