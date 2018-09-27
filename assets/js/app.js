@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setNumber();
 });
 
-function setNumber(min, max) {
+function setNumber() {
     min = parseInt(document.querySelector("#from-range").value);
     max = parseInt(document.querySelector("#to-range").value);
     var number = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -41,10 +41,11 @@ function handleChange(text) {
 }
 
 function handleSuccessfullGuess() {
-    document.querySelector('#user-input').value='';
-    document.querySelector('#guessedNumberString').style.display = 'none';
-
-    setNumber();
+    setTimeout(function(){
+        document.querySelector('#user-input').value='';
+        document.querySelector('#guessedNumberString').style.display = 'none';
+        setNumber();
+    }, 600);
 }
 
 function handleIsShowNumChange(el) {
@@ -60,6 +61,6 @@ function showHelp() {
     document.querySelector('#guessedNumberString').style.display = 'block';
 }
 
-function handleLanguageSelect(value) {
-    setNumber(0, 10);
+function handleLanguageSelect() {
+    setNumber();
 }
