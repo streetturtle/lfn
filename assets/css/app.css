@@ -2,8 +2,32 @@ header, main, footer {
     padding-left: 300px;
 }
 
+
+nav .brand-logo {
+    font-size: 1.5rem;
+}
+
+#slider-wrapper {
+    padding: 20px;
+}
+
+.drawer-item {
+    padding: 0 16px;
+}
+
+#guessedNumber {
+    font-family: Roboto;
+    font-size: 3rem;
+}
+
 @media only screen and (max-width : 992px) {
-    header, main, footer {
+    header, main, footer, .brand-logo {
         padding-left: 0;
     }
+
+    nav .brand-logo {
+        left: auto;
+        transform: none;
+    }
+
 }

@@ -4,9 +4,14 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
     <link href="{{ '/assets/css/materialize.min.css' | relative_url }}" type="text/css" rel="stylesheet"
           media="screen,projection"/>
     <link href="{{ '/assets/css/app.css' | relative_url }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/written-number.min.js' | relative_url }}"></script>
 </head>
@@ -18,68 +23,103 @@
     <nav>
         <div class="nav-wrapper">
             <!--<a href="#!" class="brand-logo">Logo</a>-->
-            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons"><i
+                    class="fas fa-bars"></i></i></a>
+            <span class="brand-logo">Learn Foreign Numbers</span>
         </div>
     </nav>
 
     <ul id="slide-out" class="sidenav  sidenav-fixed">
-
         <li>
-            <label>
-                <input id="is-say-numbers" type="checkbox" onchange="handleIsSpeakNumChange(this)"/>
-                <span>Speak numbers</span>
-            </label>
-        </li>
-        <li>
-            <label>
-                <input id="is-show-numbers" type="checkbox" checked onchange="handleIsShowNumChange(this)"/>
-                <span>Show numbers</span>
-            </label>
-        </li>
-
-        <li>
-            <div class="input-field col s12">
-                <select id="lang-selector" onchange="handleLanguageSelect(this.value)">
-                    <option value="en" voice="en-US">English</option>
-                    <option value="ptPT" voice="none">Portuguese</option>
-                    <option value="es" voice="es-ES">Spanish</option>
-                    <option value="fr" voice="fr-FR">French</option>
-                    <option value="it" voice="it-IT">Italian</option>
-                    <option value="eo" voice="none">Esperanto</option>
-                    <option value="vi" voice="none">Vietnamese</option>
-                    <option value="tr" voice="none">Turkish</option>
-                </select>
-                <label>Materialize Select</label>
+            <div class="drawer-item">
+                Settings
             </div>
         </li>
 
+        <li>
+            <div class="divider"></div>
+        </li>
+
+        <li>
+            <div class="drawer-item">
+                <span>Speak numbers</span>
+                <span class="switch">
+                    <label>
+                        <input id="is-say-numbers" type="checkbox" onchange="handleIsSpeakNumChange(this)"/>
+                        <span class="lever"></span>
+                    </label>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div class="drawer-item">
+                <span>Show numbers</span>
+                <span class="switch">
+                    <label>
+                        <input id="is-show-numbers" type="checkbox" checked onchange="handleIsShowNumChange(this)">
+                        <span class="lever"></span>
+                    </label>
+                </span>
+            </div>
+        </li>
+
+        <li>
+            <div class="drawer-item">
+                <div class="input-field col s12">
+                    <select id="lang-selector" onchange="handleLanguageSelect(this.value)">
+                        <option value="en" voice="en-US">English</option>
+                        <option value="ptPT" voice="none">Portuguese</option>
+                        <option value="es" voice="es-ES">Spanish</option>
+                        <option value="fr" voice="fr-FR">French</option>
+                        <option value="it" voice="it-IT">Italian</option>
+                        <option value="eo" voice="none">Esperanto</option>
+                        <option value="vi" voice="none">Vietnamese</option>
+                        <option value="tr" voice="none">Turkish</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="from-range">From</label>
+                    <input id="from-range" type="text" value="0" oninput="">
+                </div>
+                <div class="input-field col s6">
+                    <label for="to-range">To</label>
+                    <input id="to-range" type="text" value="10" oninput="">
+                </div>
+            </div>
+        </li>
 
     </ul>
 
-    <div class="row">
-        <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <div id="guessedNumber">0</div>
-                    <div id="guessedNumberString"></div>
-                    <p>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input id="user-input" type="text" oninput="handleChange(this.value)">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <div class="row center-align">
+                            <div id="guessedNumber">0</div>
                         </div>
-                    </p>
+                        <div class="row center-align">
+                            <div id="guessedNumberString"></div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field center-align">
+                                <input id="user-input" type="text" oninput="handleChange(this.value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#" onclick="showHelp()">Help!</a>
+                        <a href="#" onclick="speakk()">Say again</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card-action">
-                <a href="#" onclick="showHelp()">Help!</a>
-                <a href="#" onclick="speakk()">Say again</a>
+
             </div>
         </div>
-
-
-    </div>
-    </div>
 
 </main>
 

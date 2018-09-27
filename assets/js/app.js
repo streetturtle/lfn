@@ -3,18 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
     M.FormSelect.init(document.querySelectorAll('select'), {});
 
-    setNumber(0, 10);
-
+    setNumber();
 });
 
 function setNumber(min, max) {
+    min = parseInt(document.querySelector("#from-range").value);
+    max = parseInt(document.querySelector("#to-range").value);
     var number = Math.floor(Math.random() * (max - min + 1)) + min;
     document.getElementById('guessedNumber').innerText = number;
     var lang = document.querySelector("#lang-selector").value;
     var writtenNumber1 = writtenNumber(number, {lang: lang});
     document.querySelector('#guessedNumberString').style.display = 'none';
-    document.getElementById('guessedNumberString').innerText = writtenNumber1;
-    speak(writtenNumber1, );
+    document.querySelector('#guessedNumberString').innerText = writtenNumber1;
+    speak(writtenNumber1);
 }
 
 function speak(whatToSay) {
@@ -26,13 +27,13 @@ function speak(whatToSay) {
 }
 
 function speakk() {
-    var utterance = new SpeechSynthesisUtterance(document.getElementById('guessedNumberString').innerText);
+    var utterance = new SpeechSynthesisUtterance(document.querySelector('#guessedNumberString').innerText);
     utterance.lang = document.querySelector("#lang-selector").selectedOptions[0].attributes['voice'].value;
     window.speechSynthesis.speak(utterance);
 }
 
 function handleChange(text) {
-    var gn = document.getElementById('guessedNumberString').innerText;
+    var gn = document.querySelector('#guessedNumberString').innerText;
 
     if (text === gn) {
         handleSuccessfullGuess();
@@ -40,10 +41,10 @@ function handleChange(text) {
 }
 
 function handleSuccessfullGuess() {
-    document.getElementById('user-input').value='';
+    document.querySelector('#user-input').value='';
     document.querySelector('#guessedNumberString').style.display = 'none';
 
-    setNumber(0, 10, window.speechSynthesis);
+    setNumber();
 }
 
 function handleIsShowNumChange(el) {
