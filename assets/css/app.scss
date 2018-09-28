@@ -1,5 +1,6 @@
 ---
 ---
+
 header, main, footer {
     padding-left: 300px;
 }
@@ -313,5 +314,116 @@ svg {
     -ms-transform: translateY(100%);
     -o-transform: translateY(100%);
     transform: translateY(100%);
+  }
+}
+
+
+.guessed-number.push b {
+  opacity: 0;
+}
+.guessed-number.push b.current-number {
+  opacity: 1;
+  -webkit-animation: push-in 0.6s;
+  -moz-animation: push-in 0.6s;
+  animation: push-in 0.6s;
+}
+.guessed-number.push b.prev-number {
+  -webkit-animation: push-out 0.6s;
+  -moz-animation: push-out 0.6s;
+  animation: push-out 0.6s;
+}
+
+@-webkit-keyframes push-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@-moz-keyframes push-in {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-100%);
+  }
+  60% {
+    opacity: 1;
+    -moz-transform: translateX(10%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+
+@keyframes push-in {
+  0% {
+    opacity: 0;
+    @include transform(translateX(-100%));
+  }
+  60% {
+    opacity: 1;
+    @include transform(translateX(10%));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+@-webkit-keyframes push-out {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+  60% {
+    opacity: 0;
+    -webkit-transform: translateX(110%);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+  }
+}
+@-moz-keyframes push-out {
+  0% {
+    opacity: 1;
+    -moz-transform: translateX(0);
+  }
+  60% {
+    opacity: 0;
+    -moz-transform: translateX(110%);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(100%);
+  }
+}
+@keyframes push-out {
+  0% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+  60% {
+    opacity: 0;
+    @include transform(translateX(110%));
+  }
+  100% {
+    opacity: 0;
+    @include transform(translateX(100%));
   }
 }
