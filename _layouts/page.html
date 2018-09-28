@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
+{% include head.html %}
 <body>
 <header>
 </header>
@@ -22,19 +22,21 @@
                 <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                         <div class="row center-align">
-                            <div id="guessedNumber">0</div>
-                        </div>
-                        <div class="row center-align">
+                            <h1 class="guessed-number slide">
+                                <span class="number-wrapper">
+                                    <b class="current-number"></b>
+                                    <b class="prev-number"></b>
+                                </span>
+                            </h1>
                             <div id="guessedNumberString"></div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s10">
+                            <div class="input-field col s8 offset-s2">
                                 <input id="user-input" type="text" oninput="handleChange(this.value)">
                             </div>
                             <div class="input-field col s2">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-                                    <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-                                    <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg"  id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve">
+                                    <polyline class="path" fill="none" points="20,6 9,17 4,12" stroke="#000000" stroke-miterlimit="10" stroke-width="2"></polyline>
                                 </svg>
                             </div>
                         </div>
@@ -48,6 +50,7 @@
             </div>
         </div>
     </div>
+
 </main>
 
 <footer>

@@ -6,15 +6,31 @@ document.addEventListener('DOMContentLoaded', function() {
     setNumber();
 });
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/lfn/assets/js/sw.js');
+}
+
 function setNumber() {
-    min = parseInt(document.querySelector("#from-range").value);
-    max = parseInt(document.querySelector("#to-range").value);
-    var number = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementById('guessedNumber').innerText = number;
-    var lang = document.querySelector("#lang-selector").value;
-    var writtenNumber1 = writtenNumber(number, {lang: lang});
+    let min = parseInt(document.querySelector("#from-range").value);
+    let max = parseInt(document.querySelector("#to-range").value);
+    let number = Math.floor(Math.random() * (max - min + 1)) + min;
+    let lang = document.querySelector("#lang-selector").value;
+    let writtenNumber1 = writtenNumber(number, {lang: lang});
+
     document.querySelector('#guessedNumberString').style.display = 'none';
     document.querySelector('#guessedNumberString').innerText = writtenNumber1;
+
+    let vi = document.querySelector('.number-wrapper > .current-number');
+    let hi = document.querySelector('.number-wrapper > .prev-number');
+
+    vi.classList.remove('current-number');
+    vi.classList.add('prev-number');
+    vi.classList.add('prev-number');
+
+    hi.classList.remove('prev-number');
+    hi.textContent = number;
+    hi.classList.add('current-number');
+
     speak(writtenNumber1);
 }
 
@@ -41,15 +57,23 @@ function handleChange(text) {
 }
 
 function handleSuccessfullGuess() {
+    document.querySelector('svg.checkmark').style.opacity = 1;
+    document.querySelector('svg.checkmark').style.display = 'block';
     setTimeout(function(){
         document.querySelector('#user-input').value='';
         document.querySelector('#guessedNumberString').style.display = 'none';
+
+        var s = document.querySelector('svg.checkmark').style;
+        s.opacity = 1;
+        (function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();
+
         setNumber();
+        // animateNext()
     }, 600);
 }
 
 function handleIsShowNumChange(el) {
-    document.querySelector('#guessedNumber').style.display = el.checked ? 'block' : 'none';
+    document.querySelector('.current-number').style.display = el.checked ? 'block' : 'none';
 }
 
 function handleIsSpeakNumChange(el) {
