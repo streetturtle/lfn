@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
     M.FormSelect.init(document.querySelectorAll('select'), {});
+    M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
     setNumber();
 });
@@ -48,10 +49,10 @@ function speakk() {
     window.speechSynthesis.speak(utterance);
 }
 
-function handleChange(text) {
+function handleUserInput(text) {
     var gn = document.querySelector('#guessedNumberString').innerText;
 
-    if (text === gn) {
+    if (text.toUpperCase() === gn.toUpperCase()) {
         handleSuccessfulGuess();
     }
 }
@@ -86,4 +87,8 @@ function showHelp() {
 
 function handleLanguageSelect() {
     setNumber();
+}
+
+function handleAnimationSelect() {
+
 }
