@@ -52,11 +52,11 @@ function handleChange(text) {
     var gn = document.querySelector('#guessedNumberString').innerText;
 
     if (text === gn) {
-        handleSuccessfullGuess();
+        handleSuccessfulGuess();
     }
 }
 
-function handleSuccessfullGuess() {
+function handleSuccessfulGuess() {
     document.querySelector('svg.checkmark').style.opacity = 1;
     document.querySelector('svg.checkmark').style.display = 'block';
     setTimeout(function(){
@@ -68,7 +68,6 @@ function handleSuccessfullGuess() {
         (function fade(){(s.opacity-=.1)<0?s.display="none":setTimeout(fade,40)})();
 
         setNumber();
-        // animateNext()
     }, 600);
 }
 
