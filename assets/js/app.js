@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     M.FormSelect.init(document.querySelectorAll('select'), {});
     M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
+    document.addEventListener('keyup', handleShortcut, false);
+
     setNumber();
 });
 
@@ -18,6 +20,7 @@ function setNumber() {
     let lang = document.querySelector("#lang-selector").value;
     let writtenNumber1 = writtenNumber(number, {lang: lang});
 
+    // document.querySelector('.current-number').style.display = document.querySelector('is-show-numbers').checked ? 'block' : 'none';
     document.querySelector('#guessedNumberString').style.display = 'none';
     document.querySelector('#guessedNumberString').innerText = writtenNumber1;
 
@@ -73,7 +76,7 @@ function handleSuccessfulGuess() {
 }
 
 function handleIsShowNumChange(el) {
-    document.querySelector('.current-number').style.display = el.checked ? 'block' : 'none';
+    document.querySelector('.guessed-number').style.display = el.checked ? 'block' : 'none';
 }
 
 function handleIsSpeakNumChange(el) {
@@ -82,13 +85,28 @@ function handleIsSpeakNumChange(el) {
 }
 
 function showHelp() {
-    document.querySelector('#guessedNumberString').style.display = 'block';
+    let currentValue = document.querySelector('#guessedNumberString').style.display;
+    document.querySelector('#guessedNumberString').style.display = currentValue === 'block' ? 'none' : 'block';
 }
 
 function handleLanguageSelect() {
     setNumber();
 }
 
-function handleAnimationSelect() {
+function handleAnimationSelect(animationClassName) {
+    document.querySelector('.guessed-number').classList.remove('push', 'slide', 'zoom');
+    document.querySelector('.guessed-number').classList.add(animationClassName);
+}
 
+function handleIsAccentFoldingChange() {
+
+}
+
+function handleShortcut(event) {
+    event.preventDefault();
+    if (event.altKey && event.keyCode === 72)
+        showHelp();
+    if (event.altKey && event.keyCode === 74)
+        speakk();
+    // console.log(event.keyCode);
 }

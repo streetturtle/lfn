@@ -1,0 +1,42 @@
+.guessed-number.push b {
+  opacity: 0;
+}
+.guessed-number.push b.current-number {
+  opacity: 1;
+  @include animation(push-in 0.6s);
+}
+.guessed-number.push b.prev-number {
+  @include animation(push-out 0.6s);
+}
+
+@include keyframes(push-in) {
+  0% {
+    opacity: 0;
+    @include transform(translateX(-100%));
+  }
+
+  60% {
+    opacity: 1;
+    @include transform(translateX(10%));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(push-out) {
+  0% {
+    opacity: 1;
+    @include transform(translateX(0));
+  }
+  60% {
+    opacity: 0;
+    @include transform(translateX(110%));
+  }
+  100% {
+    opacity: 0;
+    @include transform(translateX(100%));
+  }
+}

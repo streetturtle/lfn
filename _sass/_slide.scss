@@ -1,0 +1,54 @@
+.guessed-number.slide span {
+  display: inline-block;
+  padding: .2em 0;
+}
+.guessed-number.slide .number-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+.guessed-number.slide b {
+  opacity: 0;
+  top: .2em;
+}
+.guessed-number.slide b.current-number {
+  top: 0;
+  opacity: 1;
+  @include animation(slide-in 0.6s);
+}
+.guessed-number.slide b.prev-number {
+  @include animation(slide-out 0.6s);
+}
+
+@include keyframes(slide-in) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(-100%));
+  }
+
+  60% {
+    opacity: 1;
+    @include transform(translateY(20%));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(slide-out) {
+  0% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+
+  60% {
+    opacity: 0;
+    @include transform(translateY(120%));
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(translateY(100%));
+  }
+}

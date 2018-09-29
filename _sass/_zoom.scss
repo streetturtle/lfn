@@ -1,0 +1,39 @@
+.guessed-number.zoom .number-wrapper {
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  perspective: 300px;
+}
+.guessed-number.zoom b {
+  opacity: 0;
+}
+.guessed-number.zoom b.current-number {
+  opacity: 1;
+  @include animation(zoom-in 0.8s);
+}
+.guessed-number.zoom b.prev-number {
+  @include animation(zoom-out 0.8s);
+}
+
+@include keyframes(zoom-in) {
+  0% {
+    opacity: 0;
+    @include transform(translateZ(100px));
+  }
+
+  100% {
+    opacity: 1;
+    @include transform(translateZ(0));
+  }
+}
+
+@include keyframes(zoom-out) {
+  0% {
+    opacity: 1;
+    @include transform(translateZ(0));
+  }
+
+  100% {
+    opacity: 0;
+    @include transform(translateZ(-100px));
+  }
+}

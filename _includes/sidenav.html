@@ -45,6 +45,7 @@
                     <option value="vi" voice="none">Vietnamese</option>
                     <option value="tr" voice="none">Turkish</option>
                 </select>
+                <label>Language</label>
             </div>
         </div>
     </li>
@@ -64,15 +65,37 @@
 
     <li><a class="subheader">Advanced</a></li>
 
-    <li>Accent folding</li>
-    <li>Animation type
+    <li>
+        <div class="drawer-item">
+            <span>Accent folding</span>
+            <span class="switch">
+                    <label>
+                        <input id="is-accent-folding" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>
+                        <span class="lever"></span>
+                    </label>
+                </span>
+        </div>
+    </li>
+    <li>
+        <div class="drawer-item">
+            <span>Ignore Hyphens</span>
+            <span class="switch">
+                    <label>
+                        <input id="is-ignore-hyphens" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>
+                        <span class="lever"></span>
+                    </label>
+                </span>
+        </div>
+    </li>
+    <li>
         <div class="drawer-item">
             <div class="input-field col s12">
                 <select id="animation-selector" onchange="handleAnimationSelect(this.value)">
-                    <option value="zoom" voice="en-US">Zoom</option>
-                    <option value="slide" voice="none">Slide</option>
-                    <option value="push" voice="es-ES">Push</option>
+                    <option value="slide">Slide</option>
+                    <option value="push">Push</option>
+                    <option value="zoom">Zoom</option>
                 </select>
+                <label>Animation Type</label>
             </div>
         </div>
     </li>
