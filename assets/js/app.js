@@ -9,10 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setNumber();
 });
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/lfn/assets/js/sw.js');
-}
-
 function setNumber() {
     let min = parseInt(document.querySelector("#from-range").value);
     let max = parseInt(document.querySelector("#to-range").value);

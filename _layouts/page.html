@@ -57,6 +57,14 @@
 
 </footer>
 <script src="{{ '/assets/js/materialize.min.js' | relative_url }}"></script>
+<script>
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/lfn/assets/js/sw.js')
+            .then(function() { console.log("Service Worker Registered"); });
+    }
+</script>
+
 
 </body>
 </html>
