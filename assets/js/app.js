@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
     M.FormSelect.init(document.querySelectorAll('select'), {});
     M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
 
     document.addEventListener('keyup', handleShortcut, false);
 
@@ -50,6 +51,9 @@ function speakk() {
 
 function handleUserInput(text) {
     var gn = document.querySelector('#guessedNumberString').textContent;
+
+    if (document.querySelector('#is-ignore-hyphens').checked)
+        gn = gn.replace(/-/g,' ');
 
     if (text.toUpperCase() === gn.toUpperCase()) {
         handleSuccessfulGuess();
