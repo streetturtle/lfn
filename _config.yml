@@ -3,3 +3,5 @@ baseurl: /lfn
 markdown: kramdown
 kramdown:
   input: GFM
+sass:
+  style: compressed

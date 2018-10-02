@@ -17,7 +17,7 @@ function setNumber() {
     let writtenNumber1 = writtenNumber(number, {lang: lang});
 
     // document.querySelector('.current-number').style.display = document.querySelector('is-show-numbers').checked ? 'block' : 'none';
-    document.querySelector('#guessedNumberString').style.display = 'none';
+    document.querySelector('#guessedNumberString').style.visibility = 'hidden';
     document.querySelector('#guessedNumberString').innerText = writtenNumber1;
 
     let vi = document.querySelector('.number-wrapper > .current-number');
@@ -43,13 +43,13 @@ function speak(whatToSay) {
 }
 
 function speakk() {
-    var utterance = new SpeechSynthesisUtterance(document.querySelector('#guessedNumberString').innerText);
+    var utterance = new SpeechSynthesisUtterance(document.querySelector('#guessedNumberString').textContent);
     utterance.lang = document.querySelector("#lang-selector").selectedOptions[0].attributes['voice'].value;
     window.speechSynthesis.speak(utterance);
 }
 
 function handleUserInput(text) {
-    var gn = document.querySelector('#guessedNumberString').innerText;
+    var gn = document.querySelector('#guessedNumberString').textContent;
 
     if (text.toUpperCase() === gn.toUpperCase()) {
         handleSuccessfulGuess();
@@ -61,7 +61,7 @@ function handleSuccessfulGuess() {
     document.querySelector('svg.checkmark').style.display = 'block';
     setTimeout(function(){
         document.querySelector('#user-input').value='';
-        document.querySelector('#guessedNumberString').style.display = 'none';
+        document.querySelector('#guessedNumberString').style.visibility = 'hidden';
 
         var s = document.querySelector('svg.checkmark').style;
         s.opacity = 1;
@@ -77,12 +77,12 @@ function handleIsShowNumChange(el) {
 
 function handleIsSpeakNumChange(el) {
     if (el.checked)
-        speak(document.querySelector('#guessedNumberString').innerText);
+        speak(document.querySelector('#guessedNumberString').textContent);
 }
 
 function showHelp() {
-    let currentValue = document.querySelector('#guessedNumberString').style.display;
-    document.querySelector('#guessedNumberString').style.display = currentValue === 'block' ? 'none' : 'block';
+    let currentValue = document.querySelector('#guessedNumberString').style.visibility;
+    document.querySelector('#guessedNumberString').style.visibility = currentValue === 'visible' ? 'hidden' : 'visible';
 }
 
 function handleLanguageSelect() {

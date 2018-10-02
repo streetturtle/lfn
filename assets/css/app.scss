@@ -10,7 +10,11 @@ header, main, footer {
     padding-left: 300px;
 }
 
-
+body {
+  //background-color: #30373b;
+  //background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
+  color: color('grey', 'darken-3');
+}
 nav .brand-logo {
     font-size: 1.5rem;
 }
@@ -26,6 +30,10 @@ nav .brand-logo {
 #guessedNumber {
     font-family: Roboto;
     font-size: 3rem;
+}
+
+#user-input {
+  text-align: center;
 }
 
 @media only screen and (max-width : 992px) {
@@ -51,7 +59,7 @@ svg {
   stroke-linecap: round;
   stroke-dasharray: 27;
   stroke-dashoffset: -23;
-  stroke: lightgreen;
+  stroke: green;
   animation: dash 500ms ease forwards;
 }
 
