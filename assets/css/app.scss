@@ -31,6 +31,7 @@ nav .nav-wrapper{
 #guessedNumber {
     font-family: Roboto;
     font-size: 3rem;
+    margin: 0 !important;
 }
 
 #user-input {
@@ -74,6 +75,7 @@ svg {
   display: inline-block;
   position: relative;
   text-align: left;
+  font-size: 5rem;
 }
 .number-wrapper b {
   display: inline-block;

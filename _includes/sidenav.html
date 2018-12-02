@@ -91,12 +91,21 @@
     <li>
         <div class="drawer-item">
             <div class="input-field col s12">
-                <select id="animation-selector" onchange="handleAnimationSelect(this.value)">
-                    <option value="slide">Slide</option>
-                    <option value="push">Push</option>
-                    <option value="zoom">Zoom</option>
-                </select>
-                <label>Animation Type</label>
+                    <span>Animation Type</span> <br>
+                <div>
+                    <label>
+                        <input name="group1" type="radio" checked onchange="handleAnimationSelect('slide')"/>
+                        <span>Slide</span>
+                    </label>
+                    <label>
+                        <input name="group1" type="radio" onchange="handleAnimationSelect('push')"/>
+                        <span>Push</span>
+                    </label>
+                    <label>
+                        <input name="group1" type="radio" onchange="handleAnimationSelect('zoom')"/>
+                        <span>Zoom</span>
+                    </label>
+                </div>
             </div>
         </div>
     </li>
