@@ -67,13 +67,24 @@
 
     <li>
         <div class="drawer-item">
+            <span>Dark theme</span>
+            <span class="switch">
+                <label>
+                    <input id="dark-theme" type="checkbox" onchange="handleThemeChange(this)">
+                    <span class="lever"></span>
+                </label>
+            </span>
+        </div>
+    </li>
+    <li>
+        <div class="drawer-item">
             <span>Accent folding</span>
             <span class="switch">
-                    <label>
-                        <input id="is-accent-folding" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>
-                        <span class="lever"></span>
-                    </label>
-                </span>
+                <label>
+                    <input id="is-accent-folding" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>
+                    <span class="lever"></span>
+                </label>
+            </span>
         </div>
     </li>
     <li>

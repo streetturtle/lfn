@@ -5,48 +5,51 @@
 @import "zoom";
 @import "slide";
 @import "push";
+@import "components/color-variables";
+
+$primary-color: lighten(green, 2) !default;
 
 header, main, footer {
-    padding-left: 300px;
+  padding-left: 300px;
 }
 
-
-nav .brand-logo {
+nav {
+  .brand-logo {
     font-size: 1.5rem;
-}
-
-nav .nav-wrapper{
-  background: #ad1c56 url("https://www.transparenttextures.com/patterns/gplay.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+  .nav-wrapper {
+    background: #ad1c56 url("https://www.transparenttextures.com/patterns/gplay.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
 }
 
 #slider-wrapper {
-    padding: 20px;
+  padding: 20px;
 }
 
 .drawer-item {
-    padding: 0 16px;
+  padding: 0 16px;
 }
 
 #guessedNumber {
-    font-family: Roboto;
-    font-size: 3rem;
-    margin: 0 !important;
+  font-family: Roboto;
+  font-size: 3rem;
+  margin: 0 !important;
 }
 
 #user-input {
   text-align: center;
 }
 
-@media only screen and (max-width : 992px) {
-    header, main, footer, .brand-logo {
-        padding-left: 0;
-    }
+@media only screen and (max-width: 992px) {
+  header, main, footer, .brand-logo {
+    padding-left: 0;
+  }
 
-    nav .brand-logo {
-        left: auto;
-        transform: none;
-    }
+  nav .brand-logo {
+    left: auto;
+    transform: none;
+  }
 
 }
 
@@ -76,20 +79,68 @@ svg {
   position: relative;
   text-align: left;
   font-size: 5rem;
+  b {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    &.current-number {
+      position: relative;
+    }
+  }
 }
-.number-wrapper b {
-  display: inline-block;
-  position: absolute;
-  white-space: nowrap;
-  left: 0;
-  top: 0;
-}.number-wrapper b {
-  display: inline-block;
-  position: absolute;
-  white-space: nowrap;
-  left: 0;
-  top: 0;
-}
-.number-wrapper b.current-number {
-  position: relative;
+
+body.dark {
+
+  .current-number {
+    color: white;
+  }
+  .switch label input[type=checkbox]:checked + .lever {
+    background-color: #99cccc;
+    &:after {
+      background-color: teal;
+    }
+  }
+  .sidenav {
+    background-color: #202020;
+    color: white;
+    .subheader {
+      color: white;
+    }
+    [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:after {
+      background-color: teal;
+    }
+    [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
+      border: 2px solid teal;
+    }
+  }
+
+  main {
+    background-color: #393939;
+    .card-content {
+      background-color: #333;
+      border-radius: 0;
+    }
+    .card-action {
+      background-color: #222;
+      a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+        color: teal;
+      }
+    }
+  }
+  
+  nav {
+    .nav-wrapper {
+      background: #343434 url("https://www.transparenttextures.com/patterns/gplay.png");
+    }
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #171717;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #202020;
+  }
 }

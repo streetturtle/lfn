@@ -102,6 +102,13 @@ function handleIsAccentFoldingChange() {
 
 }
 
+function handleThemeChange(el) {
+    if (el.checked)
+        document.querySelector('body').classList.add('dark');
+    else
+        document.querySelector('body').classList.remove('dark');
+}
+
 function handleShortcut(event) {
     event.preventDefault();
     if (event.altKey && event.keyCode === 72)
