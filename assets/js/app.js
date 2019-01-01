@@ -7,8 +7,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('keyup', handleShortcut, false);
 
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        let theme = localStorage.getItem("theme");
+        if(theme === undefined)
+        {
+            theme = 'light';
+            localStorage.setItem("theme", theme);
+        }
+        if (theme === 'dark') {
+            document.querySelector('#dark-theme').setAttribute('checked', 'true');
+            handleThemeChange(document.querySelector('#dark-theme'));
+        }
+    } else {
+        Materialize.toast("Sorry, your browser does not support Web Storage...", 4000)
+    }
+
+
     setNumber();
 });
+
 
 function setNumber() {
     let min = parseInt(document.querySelector("#from-range").value);
