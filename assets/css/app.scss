@@ -12,6 +12,9 @@ $primary-color: lighten(green, 2) !default;
 header, main, footer {
   padding-left: 300px;
 }
+main {
+  height: 100vh;
+}
 
 nav {
   .brand-logo {
@@ -93,7 +96,7 @@ svg {
 
 body.dark {
 
-  .current-number {
+  .current-number,.prev-number,#guessedNumberString {
     color: white;
   }
   .switch label input[type=checkbox]:checked + .lever {
@@ -132,6 +135,11 @@ body.dark {
       a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
         color: teal;
       }
+    }
+    .input-field input[type=text]:focus {
+      color: #fff;
+      border-bottom: 2px solid teal;
+      box-shadow: 0 1px 0 0 #000;
     }
   }
   

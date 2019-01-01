@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
             handleThemeChange(document.querySelector('#dark-theme'));
         }
     } else {
-        Materialize.toast("Sorry, your browser does not support Web Storage...", 4000)
+        M.toast({html: "Sorry, your browser does not support Web Storage..."})
     }
 
 
