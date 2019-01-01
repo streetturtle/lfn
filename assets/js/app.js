@@ -121,10 +121,14 @@ function handleIsAccentFoldingChange() {
 }
 
 function handleThemeChange(el) {
-    if (el.checked)
+    if (el.checked) {
         document.querySelector('body').classList.add('dark');
-    else
+        localStorage.setItem('theme', 'dark');
+    }
+    else {
         document.querySelector('body').classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+    }
 }
 
 function handleShortcut(event) {
