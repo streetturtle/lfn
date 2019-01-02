@@ -32,6 +32,9 @@ nav {
 
 .drawer-item {
   padding: 0 16px;
+  .row {
+    margin-bottom: 0;
+  }
 }
 
 #guessedNumber {
@@ -140,6 +143,9 @@ body.dark {
       color: #fff;
       border-bottom: 2px solid teal;
       box-shadow: 0 1px 0 0 #000;
+    }
+    .select-dropdown {
+      color: #fff;
     }
   }
   

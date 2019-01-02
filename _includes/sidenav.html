@@ -11,55 +11,71 @@
 
     <li>
         <div class="drawer-item">
-            <span>Speak numbers</span>
-            <span class="switch">
-                    <label>
-                        <input id="is-say-numbers" type="checkbox" onchange="handleIsSpeakNumChange(this)"/>
-                        <span class="lever"></span>
-                    </label>
-                </span>
+            <div class="row">
+                <div class="col s8">
+                    <span>Speak numbers</span>
+                </div>
+                <div class="col s4">
+                <span class="switch">
+                        <label>
+                            <input id="is-say-numbers" type="checkbox" onchange="handleIsSpeakNumChange(this)"/>
+                            <span class="lever"></span>
+                        </label>
+                    </span>
+                </div>
+            </div>
         </div>
     </li>
     <li>
         <div class="drawer-item">
-            <span>Show numbers</span>
-            <span class="switch">
+            <div class="row">
+                <div class="col s8">
+                    <span>Show numbers</span>
+                </div>
+                <div class="col s4">
+                <span class="switch">
                     <label>
                         <input id="is-show-numbers" type="checkbox" checked onchange="handleIsShowNumChange(this)">
                         <span class="lever"></span>
                     </label>
                 </span>
+                </div>
+            </div>
         </div>
     </li>
 
     <li>
         <div class="drawer-item">
-            <div class="input-field col s12">
-                <select id="lang-selector" onchange="handleLanguageSelect(this.value)">
-                    <option value="en" voice="en-US">English</option>
-                    <option value="ptPT" voice="none">Portuguese</option>
-                    <option value="es" voice="es-ES">Spanish</option>
-                    <option value="fr" voice="fr-FR">French</option>
-                    <option value="it" voice="it-IT">Italian</option>
-                    <option value="eo" voice="none">Esperanto</option>
-                    <option value="vi" voice="none">Vietnamese</option>
-                    <option value="tr" voice="none">Turkish</option>
-                </select>
-                <label>Language</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="lang-selector" onchange="handleLanguageSelect(this.value)">
+                        <option value="en" voice="en-US">English</option>
+                        <option value="ptPT" voice="none">Portuguese</option>
+                        <option value="es" voice="es-ES">Spanish</option>
+                        <option value="fr" voice="fr-FR">French</option>
+                        <option value="it" voice="it-IT">Italian</option>
+                        <option value="eo" voice="none">Esperanto</option>
+                        <option value="vi" voice="none">Vietnamese</option>
+                        <option value="tr" voice="none">Turkish</option>
+                    </select>
+                    <label>Language</label>
+                </div>
             </div>
         </div>
     </li>
 
     <li>
-        <div class="row">
-            <div class="input-field col s6">
-                <label for="from-range">From</label>
-                <input id="from-range" type="text" value="0" oninput="">
-            </div>
-            <div class="input-field col s6">
-                <label for="to-range">To</label>
-                <input id="to-range" type="text" value="10" oninput="">
-            </div>
+        <div class="drawer-item">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="from-range">From</label>
+                        <input id="from-range" type="text" value="0" oninput="">
+                    </div>
+                    <div class="input-field col s6">
+                        <label for="to-range">To</label>
+                        <input id="to-range" type="text" value="10" oninput="">
+                    </div>
+                </div>
         </div>
     </li>
 
@@ -76,17 +92,17 @@
             </span>
         </div>
     </li>
-    <li>
-        <div class="drawer-item">
-            <span>Accent folding</span>
-            <span class="switch">
-                <label>
-                    <input id="is-accent-folding" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>
-                    <span class="lever"></span>
-                </label>
-            </span>
-        </div>
-    </li>
+    <!--<li>-->
+        <!--<div class="drawer-item">-->
+            <!--<span>Accent folding</span>-->
+            <!--<span class="switch">-->
+                <!--<label>-->
+                    <!--<input id="is-accent-folding" type="checkbox" onchange="handleIsAccentFoldingChange(this)" checked>-->
+                    <!--<span class="lever"></span>-->
+                <!--</label>-->
+            <!--</span>-->
+        <!--</div>-->
+    <!--</li>-->
     <li>
         <div class="drawer-item">
             <span>Ignore Hyphens</span>
