@@ -30,13 +30,13 @@ self.addEventListener("install", function(event) {
                    after making HTTP requests for each of them.
                 */
                 return cache.addAll([
-                    'lfn/#',
-                    'lfn/index.html',
-                    'lfn/assets/css/materialize.css',
-                    'lfn/assets/css/app.css',
-                    'lfn/assets/js/app.js',
-                    'lfn/assets/js/written-number.min.js',
-                    'lfn/assets/js/materialize.min.js',
+                    '/lfn/#',
+                    '/lfn/index.html',
+                    '/lfn/assets/css/materialize.css',
+                    '/lfn/assets/css/app.css',
+                    '/lfn/assets/js/app.js',
+                    '/lfn/assets/js/written-number.min.js',
+                    '/lfn/assets/js/materialize.min.js'
                 ]);
             })
             .then(function() {
