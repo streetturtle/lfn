@@ -12,10 +12,10 @@
     <li>
         <div class="drawer-item">
             <div class="row">
-                <div class="col s8">
+                <div class="col s7">
                     <span>Speak numbers</span>
                 </div>
-                <div class="col s4">
+                <div class="col s3">
                 <span class="switch">
                         <label>
                             <input id="is-say-numbers" type="checkbox" onchange="handleIsSpeakNumChange(this)"/>
@@ -29,10 +29,10 @@
     <li>
         <div class="drawer-item">
             <div class="row">
-                <div class="col s8">
+                <div class="col s7">
                     <span>Show numbers</span>
                 </div>
-                <div class="col s4">
+                <div class="col s3">
                 <span class="switch">
                     <label>
                         <input id="is-show-numbers" type="checkbox" checked onchange="handleIsShowNumChange(this)">
@@ -83,13 +83,19 @@
 
     <li>
         <div class="drawer-item">
+            <div class="row">
+            <div class="col s7">
             <span>Dark theme</span>
+            </div>
+            <div class="col s3">
             <span class="switch">
                 <label>
                     <input id="dark-theme" type="checkbox" onchange="handleThemeChange(this)">
                     <span class="lever"></span>
                 </label>
             </span>
+        </div>
+        </div>
         </div>
     </li>
     <!--<li>-->
@@ -105,14 +111,24 @@
     <!--</li>-->
     <li>
         <div class="drawer-item">
-            <span>Ignore Hyphens</span>
-            <span class="switch">
-                <label>
-                    <input id="is-ignore-hyphens" type="checkbox">
-                    <span class="lever"></span>
-                </label>
-            </span>
-            <i class="fas fa-question tooltipped grey-text" data-position="right" data-tooltip="Numbers between 21 and 99 should be 'hyphenated', ex. twenty-three or vingt-cinq"></i>
+            <div class="row">
+                <div class="col s7">
+                    <span>Ignore Hyphens</span>
+                </div>
+                <div class="col s3">
+                    <span class="switch">
+                        <label>
+                            <input id="is-ignore-hyphens" type="checkbox">
+                            <span class="lever"></span>
+                        </label>
+                    </span>
+                </div>
+                <div class="col s2">
+                    <i class="fas fa-question tooltipped grey-text" data-position="right"
+                       data-tooltip="Numbers between 21 and 99 should be 'hyphenated', ex. twenty-three or vingt-cinq"></i>
+                </div>
+            </div>
+            </div>
         </div>
     </li>
     <li>

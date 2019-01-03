@@ -7,8 +7,6 @@
 @import "push";
 @import "components/color-variables";
 
-$primary-color: lighten(green, 2) !default;
-
 header, main, footer {
   padding-left: 300px;
 }
@@ -97,6 +95,12 @@ svg {
   }
 }
 
+.sidenav, main{
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;}
+
 body.dark {
 
   .current-number,.prev-number,#guessedNumberString {
@@ -139,9 +143,12 @@ body.dark {
         color: teal;
       }
     }
+    .input-field input[type=text] {
+      color: #fff;
+    }
     .input-field input[type=text]:focus {
       color: #fff;
-      border-bottom: 2px solid teal;
+      border-bottom: 1px solid teal;
       box-shadow: 0 1px 0 0 #000;
     }
     .select-dropdown {
