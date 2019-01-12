@@ -1,7 +1,7 @@
 {
-  "name": "Learn Foreign Numbers",
-  "short_name": "LFN",
-  "description":"Learn Foreign Numbers",
+  "name": "Foreign Numbers Coach",
+  "short_name": "FNC",
+  "description":"Foreign Numbers Coach",
   "theme_color": "#222222",
   "background_color": "#393939",
   "display": "standalone",
