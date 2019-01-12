@@ -12,6 +12,10 @@ header, main, footer {
 }
 main {
   height: 100vh;
+  .input-field {
+    margin-top: 0;
+  }
+
 }
 
 nav {
@@ -53,6 +57,10 @@ nav {
   nav .brand-logo {
     left: auto;
     transform: none;
+  }
+
+  .row {
+    margin-bottom: 0;
   }
 
 }
