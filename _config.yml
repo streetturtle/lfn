@@ -1,4 +1,4 @@
-baseurl: /lfn
+#baseurl: /lfn
 
 markdown: kramdown
 kramdown:
